@@ -44,7 +44,17 @@ class TestTriangles(object):
         assert classifyTriangle(-1, -1, -1) == 'NotATriangle'
         assert classifyTriangle(0, 0, 0) == 'NotATriangle'
 
-runClassifyTriangle(3, 4, 5)
+runClassifyTriangle(3,4,5)
 runClassifyTriangle(6, 8, 10)
-runClassifyTriangle(1, 1, 1)
-runClassifyTriangle(2, 3, 5)
+runClassifyTriangle(24, 26, 10)
+runClassifyTriangle(1,1,1)
+runClassifyTriangle(100,100,100)
+runClassifyTriangle(0,0,0)
+runClassifyTriangle(10,10,10)
+runClassifyTriangle(5, 5, 3)
+runClassifyTriangle(13,9,14)
+runClassifyTriangle(7.7, 5, 9)
+runClassifyTriangle(100, 1, 1)
+runClassifyTriangle(-1, -1, -1)
+runClassifyTriangle(0, 0, 0)
+
