@@ -1,5 +1,4 @@
 import math
-import pytest
 
 def classifyTriangle(a, b, c):
     if(a + b <= c or a + c <= b or b + c <= a):
@@ -24,9 +23,13 @@ def runClassifyTriangle(a, b, c):
 class TestTriangles(object):
     def test_Right(self):
         assert classifyTriangle(3,4,5) == 'Right'
+        assert classifyTriangle(6, 8, 10) == 'Right'
+        assert classifyTriangle(24, 26, 10) == 'Right'
 
     def test_Equilateral(self):
         assert classifyTriangle(1,1,1) == 'Equilateral'
+        assert classifyTriangle(100,100,100) == 'Equilateral'
+        assert classifyTriangle(0,0,0) != 'Equilateral'
 
     def test_Isoceles(self):
         assert classifyTriangle(10,10,10) != 'Isoceles'
@@ -34,6 +37,14 @@ class TestTriangles(object):
 
     def test_Scalene(self):
         assert classifyTriangle(13,9,14) == 'Scalene'
+        assert classifyTriangle(7.7, 5, 9) == 'Scalene'
 
     def test_NotATriangle(self):
         assert classifyTriangle(100, 1, 1) == 'NotATriangle'
+        assert classifyTriangle(-1, -1, -1) == 'NotATriangle'
+        assert classifyTriangle(0, 0, 0) == 'NotATriangle'
+
+runClassifyTriangle(3, 4, 5)
+runClassifyTriangle(6, 8, 10)
+runClassifyTriangle(1, 1, 1)
+runClassifyTriangle(2, 3, 5)
