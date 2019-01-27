@@ -1,7 +1,8 @@
 import math
+from numbers import Number
 
 def classifyTriangle(a, b, c):
-    if(a + b <= c or a + c <= b or b + c <= a):
+    if(not isinstance(a, Number) or not isinstance(b, Number) or not isinstance(c, Number) or a + b <= c or a + c <= b or b + c <= a):
         return 'NotATriangle'
     if(a == b and a == c):
         return 'Equilateral'
@@ -40,6 +41,7 @@ class TestTriangles(object):
         assert classifyTriangle(7.7, 5, 9) == 'Scalene'
 
     def test_NotATriangle(self):
+        assert classifyTriangle(False, 1, 1) == 'NotATriangle'
         assert classifyTriangle(100, 1, 1) == 'NotATriangle'
         assert classifyTriangle(-1, -1, -1) == 'NotATriangle'
         assert classifyTriangle(0, 0, 0) == 'NotATriangle'
